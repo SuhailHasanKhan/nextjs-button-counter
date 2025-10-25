@@ -11,6 +11,7 @@ export default function Counter({ initialCount = 0, initialStep = 1 }) {
         if (!decreasingCheck) return;
         setCount((c) => c - step);
     };
+    
     let resetCounter = () => setCount(0);
 
     let updateStep = (e) => {
@@ -23,9 +24,25 @@ export default function Counter({ initialCount = 0, initialStep = 1 }) {
         }   
     };
 
+    return (
+        <div className="counter" aria-label="buttoncounter">
+            <div className="row">
+                <label className="label" htmlFor="step-input">Step</label>
+                <input id="step-input" type="number" min={1} value={step} onChange={updateStep} className="input" />
+                
+            </div>
 
+            <div className="counting" aria-live="polite" aria-atomic="true">
+                Count: {counting}
+            </div>
 
+            <div className="buttons">
+                <button type="button" onClick={increaseCount} className="btn">Plus 1</button>
+                <button type="button" onClick={increaseCount} className="btn" disabled={!decreasingCheck} aria-disabled={!decreasingCheck}>Minus 1</button>
+                <button type="button" onClick={resetCounter} className="secondBtn">Reset</button>
 
+            </div>
+        </div>
+    );
 
-
-}
+};
