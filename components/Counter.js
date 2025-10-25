@@ -7,7 +7,7 @@ export default function Counter({ initialCount = 0, initialStep = 1 }) {
 
     let decreasingCheck = count - step >= 0;
     let increaseCount = () => setCount((c) => c + step);
-    let increaseCount = () => {
+    let decreaseCount = () => {
         if (!decreasingCheck) return;
         setCount((c) => c - step);
     };
@@ -33,12 +33,12 @@ export default function Counter({ initialCount = 0, initialStep = 1 }) {
             </div>
 
             <div className="counting" aria-live="polite" aria-atomic="true">
-                Count: {counting}
+                Count: {count}
             </div>
 
             <div className="buttons">
                 <button type="button" onClick={increaseCount} className="btn">Plus 1</button>
-                <button type="button" onClick={increaseCount} className="btn" disabled={!decreasingCheck} aria-disabled={!decreasingCheck}>Minus 1</button>
+                <button type="button" onClick={decreaseCount} className="btn" disabled={!decreasingCheck} aria-disabled={!decreasingCheck}>Minus 1</button>
                 <button type="button" onClick={resetCounter} className="secondBtn">Reset</button>
 
             </div>
