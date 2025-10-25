@@ -1,4 +1,4 @@
-
+<h1>Coding Project — Next.js “Button Counter” (React)</H1>
 
 A one-page counting application created with **React, Javascript, HTML and CSS**. 
 
