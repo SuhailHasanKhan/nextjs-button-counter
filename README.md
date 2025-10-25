@@ -6,8 +6,13 @@ It renders a reusable, accessible **Button Counter** component with Plus -1, Min
 
 How to Run Locally
 1. Clone or download this repository.
+
 2. In the project folder, install dependencies:
+
+3. In Command Prompt, type the following one-by-one.
    
    > npm install
    
    > npm run dev
+
+3. Open your browser and visit http://localhost:3000
